@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http:www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table  border="1">
+<thead>
+<tr> <th>Id</th>
+<th>Name</th>
+<th>Marks</th>
+<th>delete</th>
+<th>update</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="pro:${abc}">
+<td  th:text="${pro.id}">Id</td> 
+<td  th:text="${pro.name}">Name</td> 
+<td  th:text="${pro.marks}">marks</td> 
+<td ><a th:href="@{'/edit/'+${pro.id}}">update</a></td>
+<td ><a th:href="@{'/delete/'+${pro.id}}">remove</a></td>
+</tr>
+</tbody>
+
+
+
+</table>
+<br>
+<br>
+
+<a href="addData">Add</a>
+</body>
+</html>
